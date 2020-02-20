@@ -13,7 +13,7 @@ firebase.initializeApp({
 })
 
 
-var messaging = firebase.messaging();
+
 messaging.getToken().then(currentToken => {
     if(currentToken) {
         console.log("Token:", currentToken)
@@ -29,25 +29,3 @@ if(Notification.permission === 'granted') {
     subscribe();
 }
 
-document.getElementById("sub").onclick = function() {
-    subscribe();
-}
-
-function subscribe() {
-    messaging.requestPermission()
-        .then(function() {
-            messaging.getToken()
-                .then(function(currentToken) {
-                    console.log("Token:", currentToken);
-
-                    if(currentToken) {
-                        console.info("Nice");
-                    } else {
-                        console.warn("Не удалось получить токен");
-                    }
-                })
-                .catch(function(err) {
-                    console.warn(err);
-                })
-        })
-}
