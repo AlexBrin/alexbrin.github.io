@@ -1,15 +1,14 @@
 document.addEventListener("DOMContentLoaded", function() {
     Notification.requestPermission()
         .then(permission => {
+            registerSW();
             console.log(permission);
         })
         .catch(err => {
             console.log(err);
         });
 
-    document.getElementById("sub").onclick = function() {
-        subscribe();
-    }
+    document.getElementById("sub").onclick = registerSW;
 })
 
 function registerSW() {
