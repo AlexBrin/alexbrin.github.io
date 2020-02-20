@@ -13,7 +13,7 @@ firebase.initializeApp({
 })
 
 
-window.messaging = firebase.messaging();
+var messaging = firebase.messaging();
 messaging.getToken().then(currentToken => {
     if(currentToken) {
         console.log("Token:", currentToken)
