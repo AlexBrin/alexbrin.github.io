@@ -13,18 +13,22 @@ firebase.initializeApp({
 })
 
 var messaging = firebase.messaging();
-messaging.getToken().then(currentToken => {
-    if(currentToken) {
-        console.log("Token:", currentToken)
-    } else {
-        console.log('No Instance ID token available. Request permission to generate one.');
-    }
-})
+console.log(messaging);
+messaging
+    .getToken()
+    .then(currentToken => {
+
+        if (currentToken) {
+            console.log("Token:", currentToken)
+        } else {
+            console.log('No Instance ID token available. Request permission to generate one.');
+        }
+    })
     .catch(err => {
         console.error(err);
     });
 
-if(Notification.permission === 'granted') {
+if (Notification.permission === 'granted') {
     subscribe();
 }
 
