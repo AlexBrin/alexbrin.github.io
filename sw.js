@@ -11,8 +11,6 @@ firebase.initializeApp({
     appId: "1:468240947431:web:d77511f15ae3b6f433ea42",
     measurementId: "G-WR3G7792E4"
 })
-firebase.analytics();
-
 
 
 if('Notification' in window) {
