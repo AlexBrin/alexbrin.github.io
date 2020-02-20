@@ -21,7 +21,7 @@
     <script>
         if('serviceWorker' in navigator) {
             navigator.serviceWorker.register('firebase-messaging-sw.js', {
-                scope: 'https://alexbrin.github.io/test/'
+                scope: '/test/'
             })
             .then(function(registration) {
                 var serviceWorker;
