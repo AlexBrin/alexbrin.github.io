@@ -1,3 +1,6 @@
+importScripts('https://www.gstatic.com/firebasejs/3.6.8/firebase-app.js');
+importScripts('https://www.gstatic.com/firebasejs/3.6.8/firebase-messaging.js');
+
 firebase.initializeApp({
     apiKey: "AIzaSyA1cTRtYRpVmACeaqbdnHnruvoWEj_LLdM",
     authDomain: "titan-checker-dev.firebaseapp.com",
@@ -9,8 +12,7 @@ firebase.initializeApp({
     measurementId: "G-WR3G7792E4"
 })
 
-
-
+var messaging = firebase.messaging();
 messaging.getToken().then(currentToken => {
     if(currentToken) {
         console.log("Token:", currentToken)
