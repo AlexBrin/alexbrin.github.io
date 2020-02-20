@@ -13,28 +13,24 @@ firebase.initializeApp({
 })
 
 
-if('Notification' in window) {
-    window.messaging = firebase.messaging();
-    messaging.getToken().then(currentToken => {
-        if(currentToken) {
-            console.log("Token:", currentToken)
-        } else {
-            console.log('No Instance ID token available. Request permission to generate one.');
-        }
-    })
-        .catch(err => {
-            console.error(err);
-        });
-
-    if(Notification.permission === 'granted') {
-        subscribe();
+window.messaging = firebase.messaging();
+messaging.getToken().then(currentToken => {
+    if(currentToken) {
+        console.log("Token:", currentToken)
+    } else {
+        console.log('No Instance ID token available. Request permission to generate one.');
     }
+})
+    .catch(err => {
+        console.error(err);
+    });
 
-    document.getElementById("sub").onclick = function() {
-        subscribe();
-    }
-} else {
-    document.getElementById("sub").innerText = "Не поддерживается";
+if(Notification.permission === 'granted') {
+    subscribe();
+}
+
+document.getElementById("sub").onclick = function() {
+    subscribe();
 }
 
 function subscribe() {
