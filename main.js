@@ -1,15 +1,17 @@
 document.addEventListener("DOMContentLoaded", function() {
+    document.getElementById("sub").onclick = subscribe;
+})
+
+function subscribe() {
     Notification.requestPermission()
         .then(permission => {
-            registerSW();
             console.log(permission);
+            registerSW();
         })
         .catch(err => {
             console.log(err);
         });
-
-    document.getElementById("sub").onclick = registerSW;
-})
+}
 
 function registerSW() {
     if ('serviceWorker' in navigator){
