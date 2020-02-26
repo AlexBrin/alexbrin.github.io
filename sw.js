@@ -15,11 +15,10 @@ firebase.initializeApp({
 console.log(typeof alert);
 
 var messaging = firebase.messaging();
-console.log(messaging);
+console.log("messaging:", messaging);
 messaging
     .getToken()
     .then(currentToken => {
-
         if (currentToken) {
             console.log("Token:", currentToken)
         } else {
@@ -40,7 +39,7 @@ function subscribe() {
         .then(function() {
             messaging.getToken()
                 .then(function(currentToken) {
-                    console.log("Token:", currentToken);
+                    console.log(".Token:", currentToken);
                 })
                 .catch(function(err) {
                     console.warn(err);
