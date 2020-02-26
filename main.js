@@ -18,6 +18,7 @@ function subscribe() {
 function registerSW() {
     if ('serviceWorker' in navigator){
         navigator.serviceWorker.register('sw.js', {scope: "/"}).then(function(registration){
+            window.sw = registration;
             registration.showNotification("Title", {
                 body: "dub dub",
                 tag: "Tagggg",
