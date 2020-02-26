@@ -17,6 +17,11 @@ subscribe();
 var messaging = firebase.messaging();
 console.log("messaging:", messaging);
 
+messaging.onMessage(function(payload) {
+    console.log("Payload: ", payload);
+    return payload;
+})
+
 messaging.requestPermission()
     .then(function(p) {
         console.log("perm:", p)

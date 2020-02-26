@@ -1,7 +1,7 @@
 document.addEventListener("DOMContentLoaded", function() {
     // document.getElementById("sub").onclick = subscribe;
 
-    registerSW();
+    subscribe();
 })
 
 function subscribe() {
@@ -18,6 +18,13 @@ function subscribe() {
 function registerSW() {
     if ('serviceWorker' in navigator){
         navigator.serviceWorker.register('sw.js', {scope: "/"}).then(function(registration){
+            registration.showNotification("Title", {
+                body: "dub dub",
+                tag: "Tagggg",
+                data: "data dub dub",
+                badge: "badgge",
+                vibrate: [10]
+            })
                 console.log('service worker registration succeeded:',registration);
             },
             function(error){
