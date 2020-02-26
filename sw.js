@@ -10,16 +10,13 @@ firebase.initializeApp({
     messagingSenderId: "468240947431",
     appId: "1:468240947431:web:d77511f15ae3b6f433ea42",
     measurementId: "G-WR3G7792E4"
-})
-    .then(function(a, b, c) {
-        console.log("a ", a);
-        console.log("b ", b);
-        console.log("c ", c);
-    })
+});
 
 var messaging = firebase.messaging();
+
 console.log("messaging:", messaging);
 
+console.log(messaging.onMessage)
 messaging.onMessage(function(payload) {
     console.log("Payload: ", payload);
     return payload;
@@ -27,10 +24,10 @@ messaging.onMessage(function(payload) {
 
 messaging.requestPermission()
     .then(function(p) {
-        console.log("perm:", p)
+        console.log("perm: ", p)
         messaging.getToken()
             .then(function(currentToken) {
-                console.log("Token:", currentToken);
+                console.log("Token: ", currentToken);
             })
             .catch(function(err) {
                 console.warn(err);
