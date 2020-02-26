@@ -16,28 +16,18 @@ subscribe();
 
 var messaging = firebase.messaging();
 console.log("messaging:", messaging);
-messaging
-    .getToken()
-    .then(currentToken => {
-        if (currentToken) {
-            console.log("Token:", currentToken)
-        } else {
-            console.log('No Instance ID token available. Request permission to generate one.');
-        }
-    })
-    .catch(err => {
-        console.error(err);
-    });
 
-function subscribe() {
-    messaging.requestPermission()
-        .then(function() {
-            messaging.getToken()
-                .then(function(currentToken) {
-                    console.log(".Token:", currentToken);
-                })
-                .catch(function(err) {
-                    console.warn(err);
-                })
-        })
-}
+messaging.requestPermission()
+    .then(function(p) {
+        console.log("perm:", p)
+        messaging.getToken()
+            .then(function(currentToken) {
+                console.log("Token:", currentToken);
+            })
+            .catch(function(err) {
+                console.warn(err);
+            })
+    })
+    .catch(function(err) {
+        console.warn(err);
+    })
