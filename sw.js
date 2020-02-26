@@ -12,7 +12,7 @@ firebase.initializeApp({
     measurementId: "G-WR3G7792E4"
 })
 
-console.log(typeof alert);
+subscribe();
 
 var messaging = firebase.messaging();
 console.log("messaging:", messaging);
@@ -28,11 +28,6 @@ messaging
     .catch(err => {
         console.error(err);
     });
-
-if (Notification.permission === 'granted') {
-    subscribe();
-}
-
 
 function subscribe() {
     messaging.requestPermission()
