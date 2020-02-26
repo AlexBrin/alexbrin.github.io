@@ -36,11 +36,6 @@ if (Notification.permission === 'granted') {
 
 
 function subscribe() {
-    if(!('Notification' in window)) {
-        alert('Notification not supported');
-        return;
-    }
-
     messaging.requestPermission()
         .then(function() {
             messaging.getToken()
