@@ -15,8 +15,6 @@ firebase.initializeApp({
 var messaging = firebase.messaging();
 
 
-messaging.usePublicVapidKey("AAAAbQVV2Oc:APA91bHxPsIVao7iCeOwp-wcBvhc1PYTJVRkoYT9rZxslsJo0dp9vb4v9fTVJkJKGp8YZYxm4n4Wr5KXPt2fpWtv2NZoZ8UQC7UwDLthKXDZoi7CnB_-yyymxwlFSvdSr5BQtT0Pukca");
-
 console.log("messaging:", messaging);
 
 console.log(messaging.onMessage)
