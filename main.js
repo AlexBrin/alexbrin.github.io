@@ -23,7 +23,7 @@ function registerSW() {
                 body: "dub dub",
                 tag: "Tagggg",
                 data: "data dub dub",
-                badge: "badgge",
+                badge: "sw.js",
                 vibrate: [10]
             })
                 console.log('service worker registration succeeded:',registration);

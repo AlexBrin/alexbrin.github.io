@@ -11,8 +11,11 @@ firebase.initializeApp({
     appId: "1:468240947431:web:d77511f15ae3b6f433ea42",
     measurementId: "G-WR3G7792E4"
 })
-
-subscribe();
+    .then(function(a, b, c) {
+        console.log("a ", a);
+        console.log("b ", b);
+        console.log("c ", c);
+    })
 
 var messaging = firebase.messaging();
 console.log("messaging:", messaging);
