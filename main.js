@@ -1,7 +1,7 @@
 document.addEventListener("DOMContentLoaded", function() {
     // document.getElementById("sub").onclick = subscribe;
 
-    subscribe();
+    registerSW();
 })
 
 function subscribe() {
