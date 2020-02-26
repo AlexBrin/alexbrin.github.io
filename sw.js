@@ -12,6 +12,8 @@ firebase.initializeApp({
     measurementId: "G-WR3G7792E4"
 })
 
+console.log(typeof alert);
+
 var messaging = firebase.messaging();
 console.log(messaging);
 messaging
@@ -39,19 +41,11 @@ function subscribe() {
         return;
     }
 
-
-
     messaging.requestPermission()
         .then(function() {
             messaging.getToken()
                 .then(function(currentToken) {
                     console.log("Token:", currentToken);
-
-                    if(currentToken) {
-                        console.info("Nice");
-                    } else {
-                        console.warn("Не удалось получить токен");
-                    }
                 })
                 .catch(function(err) {
                     console.warn(err);
