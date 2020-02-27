@@ -3,6 +3,10 @@ importScripts('https://www.gstatic.com/firebasejs/7.9.1/firebase-messaging.js');
 var messaging = firebase.initializeApp({
     messagingSenderId: '468240947431',
 });
+
+console.log(messaging);
+console.log(messaging.setBackgroundMessageHandler);
+
 messaging.setBackgroundMessageHandler(function (payload) {
     console.log("Handling background message ", payload);
     payload.data.data = JSON.parse(JSON.stringify(payload.data));
