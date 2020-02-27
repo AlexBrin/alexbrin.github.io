@@ -1,5 +1,12 @@
 firebase.initializeApp({
-    messagingSenderId: '448358493027'
+    apiKey: "AIzaSyA1cTRtYRpVmACeaqbdnHnruvoWEj_LLdM",
+    authDomain: "titan-checker-dev.firebaseapp.com",
+    databaseURL: "https://titan-checker-dev.firebaseio.com",
+    projectId: "titan-checker-dev",
+    storageBucket: "titan-checker-dev.appspot.com",
+    messagingSenderId: "468240947431",
+    appId: "1:468240947431:web:d77511f15ae3b6f433ea42",
+    measurementId: "G-WR3G7792E4"
 });
 
 
