@@ -1,9 +1,9 @@
 importScripts('https://www.gstatic.com/firebasejs/7.9.1/firebase-app.js');
 importScripts('https://www.gstatic.com/firebasejs/7.9.1/firebase-messaging.js');
-var app = firebase.initializeApp({
+var messaging = firebase.initializeApp({
     messagingSenderId: '468240947431',
 });
-app.setBackgroundMessageHandler(function (payload) {
+messaging.setBackgroundMessageHandler(function (payload) {
     console.log("Handling background message ", payload);
     payload.data.data = JSON.parse(JSON.stringify(payload.data));
     return self.registration.showNotification(payload.data.title, payload.data);

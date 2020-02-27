@@ -12,6 +12,7 @@ firebase.initializeApp({
 
 const localStorageFirebaseMessagingKey = 'firebase-messaging-token';
 const subscribeButton = document.getElementById('subscribe');
+// @ts-ignore
 let messaging: firebase.messaging.Messaging;
 
 if (
