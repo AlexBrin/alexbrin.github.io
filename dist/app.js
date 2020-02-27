@@ -25,7 +25,7 @@ if ('Notification' in window &&
     };
     messaging.onMessage(function (payload) {
         console.log("Message received: ", payload);
-        navigator.serviceWorker.register('firebase-messaging-sw.js', { scope: '/' });
+        navigator.serviceWorker.register('dist/firebase-messaging-sw.js', { scope: '/' });
         Notification.requestPermission()
             .then(function (permission) {
             if (permission === 'granted') {
