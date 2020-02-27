@@ -1,7 +1,7 @@
 /// <reference path="d/firebase-messaging-sw.d.ts" />
 /// <reference path="d/service-worker.d.ts" />
-importScripts('https://www.gstatic.com/firebasejs/3.7.2/firebase-app.js');
-importScripts('https://www.gstatic.com/firebasejs/3.7.2/firebase-messaging.js');
+importScripts('https://www.gstatic.com/firebasejs/7.9.1/firebase-app.js');
+importScripts('https://www.gstatic.com/firebasejs/7.9.1/firebase-messaging.js');
 
 let app: firebase.messaging.Messaging = firebase.initializeApp({
     messagingSenderId: '468240947431',
